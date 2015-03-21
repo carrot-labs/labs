@@ -1,0 +1,32 @@
+{
+  "name": "004-single-page-application",
+  "version": "0.0.0",
+  "homepage": "spaly.surge.sh",
+  "authors": [
+    "Guilherme Rv Coelho <guilherme@cenoura.co>"
+  ],
+  "description": "A polymer single page application",
+  "main": "app/index.html",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "spa",
+    "webapp"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.5",
+    "core-elements": "Polymer/core-elements#~0.5.5",
+    "paper-elements": "Polymer/paper-elements#~0.5.5",
+    "font-roboto": "Polymer/font-roboto#~0.5.5"
+  }
+}

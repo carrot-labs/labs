@@ -1,0 +1,54 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #E5E5E5;
+  font-family: 'Roboto', serif;
+  font-size: 16px;
+}
+
+core-toolbar {
+  background-color: #3F51B5;
+  color: white;
+  box-shadow: none;
+}
+
+#left-drawer {
+  background: white;
+}
+
+#left-drawer core-menu {
+  margin: 0;
+}
+
+#left-drawer a {
+  padding-left: 1rem;
+  text-decoration: none;
+  color: rgba(0,0,0,.87);
+}
+
+#left-drawer paper-item.core-selected {
+  background: rgba(255,64,129,.1);
+}
+
+
+#left-drawer core-icon {
+  color: #FF4081;
+}
+
+#left-drawer ::shadow paper-ripple {
+  color: #4285f4;
+}
+
+#dropdown-menu paper-item {
+  color: rgba(0,0,0,.87);
+}
+
+#main-content {
+  margin: 3.5rem;
+  background: white;
+}
+
+.main-heading {
+  font-size: 2.75rem;
+  font-weight: 300;
+}

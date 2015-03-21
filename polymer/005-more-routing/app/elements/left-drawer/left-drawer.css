@@ -1,0 +1,14 @@
+core-header-panel {
+  background: white;
+}
+
+core-toolbar {
+  background: #3F51B5;
+  color: white;
+}
+
+paper-item a {
+  padding-left: 1rem;
+  text-decoration: none;
+  color: rgba(0,0,0,.87);
+}

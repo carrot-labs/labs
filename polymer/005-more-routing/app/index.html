@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+  <title>All Contacts</title>
+  
+  <!-- Meta Information -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Webcomponents polyfills -->
+  <script src="components/webcomponentsjs/webcomponents.min.js"></script>
+
+  <!-- Polymer Elements -->
+  <link rel="import" href="components/font-roboto/roboto.html">
+  <link rel="import" href="components/core-elements/core-elements.html">
+  <link rel="import" href="components/paper-elements/paper-elements.html">
+  <link rel="import" href="components/app-router/app-router.html">
+
+  <!-- Custom elements -->
+  <link rel="import" href="elements/left-drawer/left-drawer.html">
+</head>
+
+<body fullbleed layout vertical unresolved>
+
+  <core-drawer-panel>
+
+    <left-drawer drawer></left-drawer>
+      
+    <core-header-panel main>
+
+      <core-toolbar>
+        <paper-icon-button icon="menu" core-drawer-toggle>
+        </paper-icon-button>
+
+        <div flex>All contacts</div>
+
+        <paper-menu-button>
+          <paper-icon-button icon="more-vert"></paper-icon-button>
+
+          <paper-dropdown class="dropdown" halign="right">
+            <core-menu class="menu">
+              <paper-item>Settings</paper-item>
+              <paper-item>Help</paper-item>
+              <paper-item>Feedback</paper-item>
+            </core-menu>
+          </paper-dropdown>
+        </paper-menu-button>
+      </core-toolbar>
+
+      <div class="content" layout horizontal center-center>
+        
+        <app-router>
+          <app-route path="/" import="pages/home-page.html"></app-route>
+          <app-route path="/about" import="pages/about-page.html"></app-route>
+          <app-route path="/contact" import="pages/contact-page.html"></app-route>
+          <app-route path="/users/:userId" import="pages/users-page.html"></app-route>
+          <app-route path="*" import="pages/not-found-page.html"></app-route>
+        </app-router>
+
+      </div>
+
+    </core-header-panel>
+  </core-drawer-panel>
+
+</body>
+</html>

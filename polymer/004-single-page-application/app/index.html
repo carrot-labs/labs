@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+  <title>Spally</title>
+  
+  <!-- Meta Information -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Webcomponents polyfills -->
+  <script src="components/webcomponentsjs/webcomponents.min.js"></script>
+
+  <!-- Polymer Elements -->
+  <link rel="import" href="components/font-roboto/roboto.html">
+  <link rel="import" href="components/core-elements/core-elements.html">
+  <link rel="import" href="components/paper-elements/paper-elements.html">
+  <link rel="import" href="components/core-animated-pages/core-animated-pages.html">
+  <link rel="import" href="components/core-animated-pages/transitions/slide-from-right.html">
+
+  <link rel="import" href="elements/left-drawer/left-drawer.html">
+</head>
+
+<body fullbleed layout vertical unresolved>
+
+  <template is="auto-binding">
+
+    <core-drawer-panel>
+      <core-header-panel drawer id="left-drawer">
+        <core-toolbar>
+          <div>Pages</div>
+        </core-toolbar>
+
+        <core-menu valueattr="hash" selected="{{route}}">
+          <template repeat="{{page in pages}}">
+            <paper-item hash="{{page.hash}}">
+              <core-icon icon="label-outline"></core-icon>
+              <a href="#{{page.hash}}">{{page.name}}</a>
+            </paper-item>
+          </template>
+        </core-menu>
+      </core-header-panel>
+
+      <core-header-panel main flex>
+        <core-toolbar>
+          <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
+
+          <div flex>Spally</div>
+
+          <paper-icon-button icon="add"></paper-icon-button>
+
+          <paper-menu-button id="dropdown-menu">
+            <paper-icon-button icon="more-vert">
+            </paper-icon-button>
+
+            <paper-dropdown class="dropdown" halign="right">
+              <core-menu class="menu">
+                <paper-item>Settings</paper-item>
+                <paper-item>Help</paper-item>
+                <paper-item>Feedback</paper-item>
+              </core-menu>
+            </paper-dropdown>
+          </paper-menu-button>
+        </core-toolbar>
+
+        <div id="main-content" layout horizontal center-center fit>  
+          
+          <core-animated-pages valueattr="hash" selected="{{route}}" transitions="slide-from-right">
+            <template repeat="{{page in pages}}">
+              <section hash="{{page.hash}}" layout vertical center-center>
+                <h1 class="main-heading">{{page.name}}</h1>
+              </section>
+    
+            </template>
+
+            <section layout vertical center-center>
+              <h1 class="main-heading">About</h1>
+            </section>
+
+            <section layout vertical center-center>
+              <h1 class="main-heading">Contact</h1>
+            </section>
+          </core-animated-pages>
+
+        </div>
+      </core-header-panel>
+    </core-drawer-panel>
+
+  </template>
+
+  <script>
+    var template = document.querySelector('template[is="auto-binding"]');
+
+    template.pages = [
+      {name: 'Home', hash: 'one'},
+      {name: 'About', hash: 'two'},
+      {name: 'Contact', hash: 'three'},
+    ];
+  </script>
+
+</body>
+</html>

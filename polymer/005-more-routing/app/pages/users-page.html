@@ -1,0 +1,28 @@
+<link rel="import" href="../../components/polymer/polymer.html">
+
+<polymer-element name="users-page" attributes="userId">
+  <template>
+    <h1>This is the users page</h1>
+
+    <h2>You've selected the user: {{userId}}</h2>
+
+    <core-icon icon="face"></core-icon>
+
+    <paper-fab icon="send" on-click="{{goToNextPage}}">
+
+    </paper-fab>
+  </template>
+
+  <script>
+    Polymer({
+      goToNextPage: function() {
+        var nextId = this.userId + 1;
+        var newUrl;
+
+        var newUrl = nextId <= 10 ? '#/users/' + nextId : '#/users/1'
+
+        window.location.hash = newUrl
+      }
+    });
+  </script>
+</polymer-element>
